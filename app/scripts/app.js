@@ -29,11 +29,18 @@ angular
      .state('main', {
        url:'/main',
        templateUrl:'views/gen_views/main.html'
+     })
+     .state('applicants', {
+        url:'/applicants',
+        templateUrl:'views/gen_views/applicants.html'
+     })
+     .state('applicantDetail', {
+        url:'/applicants/:applicantId',
+        templateUrl:'views/gen_views/applicantDetail.html',
+        controller: 'ApplicantDetailCtrl'
      });
   })
   
-  .factory('Resumes', ['$resource', function($resource){
-      return $resource('http://localhost:3000/applicants/:resumeId', {}, {
-        // query:{method:'GET', isArray:true}
-      });
+  .factory('Applicants', ['$resource', function($resource){
+      return $resource('http://localhost:3000/applicants/:id', {}, {});
   }]);

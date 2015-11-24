@@ -8,7 +8,6 @@
  * Controller of the zuxAdminApp
  */
 angular.module('zuxAdminApp')
-  .controller('MainCtrl', ['$scope','Resumes', function ($scope, Resumes) {
-    $scope.resumes = Resumes.query();
+  .controller('MainCtrl', ['$scope', function ($scope) {
     $scope.testArray = ['Lightdog', 'is', 'awesome'];
   }]);
