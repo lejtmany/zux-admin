@@ -28,11 +28,13 @@ angular
         )
      .state('main', {
        url:'/main',
-       templateUrl:'views/gen_views/main.html'
+       templateUrl:'views/gen_views/main.html',
+       controller: 'MainCtrl'
      })
      .state('applicants', {
         url:'/applicants',
-        templateUrl:'views/gen_views/applicants.html'
+        templateUrl:'views/gen_views/applicants.html',
+        controller:'ApplicantsCtrl'
      })
      .state('applicantDetail', {
         url:'/applicants/:applicantId',
