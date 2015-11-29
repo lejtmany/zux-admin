@@ -36,6 +36,11 @@ angular
         templateUrl:'views/applicants.html',
         controller:'ApplicantsCtrl'
      })
+     .state('addApplicant', {
+       url:'/addApplicant',
+       templateUrl:'views/addapplicant.html',
+       controller:'AddApplicantCtrl'
+     })
      .state('applicantDetail', {
         url:'/applicants/:applicantId',
         templateUrl:'views/applicantDetail.html',
