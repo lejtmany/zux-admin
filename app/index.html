@@ -10,6 +10,9 @@
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="bower_components/videojs/dist/video-js/video-js.css" />
+  <link rel="stylesheet" href="bower_components/jquery-ui/themes/base/jquery-ui.min.css">
+  <link rel="stylesheet" href="bower_components/flat-ui/dist/css/flat-ui.css" />
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
@@ -42,15 +45,19 @@
       </div>
     </div>
   </div>
-
   <div class="container">
     <div ui-view=""></div>
+    <!--<input type="text" ng-model='someObject' placeholder="Type Something...">
+    <test-directive message='hi again!' my-model='someObject'></test-directive>-->
+    <div class="slider"></div>
+    <form action="blah">
+      <div class="tagsinput-primary">
+        <input class="tagsinput" type="tagsinput" value="blah" name="tagsinput" data-role="tagsinput">
+      </div>
+    </form>
   </div>
-
   <div class="footer">
   </div>
-
-
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
   <script>
     !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
@@ -73,6 +80,9 @@
   <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
   <script src="bower_components/angular-touch/angular-touch.js"></script>
   <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="bower_components/videojs/dist/video-js/video.js"></script>
+  <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+  <script src="bower_components/flat-ui/dist/js/flat-ui.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 
@@ -82,7 +92,14 @@
   <script src="scripts/controllers/about.js"></script>
   <script src="scripts/controllers/applicants.js"></script>
   <script src="scripts/controllers/applicantdetail.js"></script>
+  <script src="scripts/directives/testdirective.js"></script>
   <!-- endbuild -->
+  <script>
+    $(function(){
+      $(".slider").slider();
+      });
+  </script>
 </body>
+
 
 </html>
