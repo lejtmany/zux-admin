@@ -19,7 +19,7 @@ module.exports = function (grunt) {
     cdnify: 'grunt-google-cdn'
   });
 
-  grunt.loadNpmTasks('grunt-contrib-jade');
+  // grunt.loadNpmTasks('grunt-contrib-jade');
   
 
   // Configurable paths for the application
@@ -58,10 +58,7 @@ module.exports = function (grunt) {
       gruntfile: {
         files: ['Gruntfile.js']
       },
-      jade:{
-        files:['app/views/jade_templates/**/*.jade'],
-        tasks:['clean:jade','jade']
-      },
+      
       livereload: {
         options: {
           livereload: '<%= connect.options.livereload %>'
@@ -69,8 +66,7 @@ module.exports = function (grunt) {
         files: [
           '<%= yeoman.app %>/{,*/}*.html',
           '.tmp/styles/{,*/}*.css',
-          '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
-          'app/views/jade_templates/**/*.jade'
+          '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
       }
     },
@@ -175,10 +171,7 @@ module.exports = function (grunt) {
           ]
         }]
       },
-      server: '.tmp',
-      jade:{
-        src:['app/views/gen_views']
-      }
+      server: '.tmp'
     },
 
     // Add vendor prefixed styles
@@ -435,23 +428,6 @@ module.exports = function (grunt) {
         singleRun: true
       }
     },
-
-    jade: {
-      compile: {
-        options: {
-          data: {
-            debug: false
-          }
-        },
-        files: [{
-          cwd:'app/views/jade_templates',
-          src: '**/*.jade',
-          dest:'app/views/gen_views',
-          expand:true,
-          ext:'.html'
-        }]
-      }
-    }
   });
 
 
@@ -461,8 +437,6 @@ module.exports = function (grunt) {
     }
 
     grunt.task.run([
-      'clean:jade',
-      'jade',
       'clean:server',
       'wiredep',
       'concurrent:server',

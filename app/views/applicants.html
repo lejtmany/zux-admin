@@ -1,0 +1,5 @@
+	<input type="text" placeholder="Search" ng-model="searchText.$" class="form-control" />
+	<div ng-controller="ApplicantsCtrl" class="list-group"><a ui-sref="applicantDetail({applicantId:'{{applicant._id}}'})" type="button" ng-repeat="applicant in applicants| filter:searchText"
+		class="list-group-item">{{applicant.FirstName}} {{applicant.LastName}}</a>
+	</div>
+	<button class="btn btn-primary" ui-sref='addApplicant'><i class="fa fa-lg fa-user-plus"></i> Add Applicant</button>
