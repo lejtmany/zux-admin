@@ -23,22 +23,22 @@ angular
     $stateProvider
       .state('about', {
         url: '/about',
-        templateUrl: 'views/gen_views/about.html'
+        templateUrl: 'views/about.html'
       }
         )
      .state('main', {
        url:'/main',
-       templateUrl:'views/gen_views/main.html',
+       templateUrl:'views/main.html',
        controller: 'MainCtrl'
      })
      .state('applicants', {
         url:'/applicants',
-        templateUrl:'views/gen_views/applicants.html',
+        templateUrl:'views/applicants.html',
         controller:'ApplicantsCtrl'
      })
      .state('applicantDetail', {
         url:'/applicants/:applicantId',
-        templateUrl:'views/gen_views/applicantDetail.html',
+        templateUrl:'views/applicantDetail.html',
         controller: 'ApplicantDetailCtrl'
      });
   })

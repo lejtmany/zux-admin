@@ -1,0 +1,3 @@
+
+<div ng-controller="ApplicantsCtrl" class="list-group"><a ui-sref="applicantDetail({applicantId:'{{applicant._id}}'})" type="button" ng-repeat="applicant in applicants" class="list-group-item">{{applicant.FirstName}} {{applicant.LastName}}</a></div>
+<button class="btn btn-primary">Add Applicant</button>
