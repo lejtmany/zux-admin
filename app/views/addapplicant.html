@@ -1,38 +1,35 @@
-<form action="POST">
+<form action="POST" name="applicantForm" ng-submit="submitForm(applicantForm($valid))" novalidate>
 	<div class="form-group">
 		<label for="FirstName">First Name</label>
-		<input type="text" class="form-control">
+		<input type="text" class="form-control" ng-model="firstName" required>
 	</div>
 	<div class="form-group">
 		<label for="LastName">Last Name</label>
-		<input type="text" class="form-control">
+		<input type="text" class="form-control" ng-model="lastName" required>
 	</div>
 	<div class="form-group">
 		<label for="DOB">Birthday</label>
-		<input type="date" class="form-control">
+		<div class="input-group">
+			<input type="text" class="form-control" ng-model="birthday" ng-required="true" is-open="isDatePickerOpen" uib-datepicker-popup/>
+			<span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="toggleDatePicker()"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+		</div>
 	</div>
 	<div class="form-group">
 		<label for="Email">Email</label>
-		<input type="email" class="form-control">
+		<input type="email" class="form-control" ng-model="email" required>
 	</div>
 	<div class="form-group">
 		<label for="FavoriteThings">What are your 5 favorite things?</label>
-		<tags-input></tags-input>
+		<tags-input ng-model="favoriteThings"></tags-input>
+		<p>{{favoriteThings}} Length: {{favoriteThings.length}} isValid:{{applicantForm.$valid}}</p>
 	</div>
 	<div class="form-group">
-		<label for="myslider">Slider</label>
-		<div ui-slider min="0" max="50" ng-model="myModel"></div>
-		<p>{{myModel}}</p>
+		<label for="myslider">Are you the life of the party?</label>
+		<div ui-slider min="0" max="50" ng-model="lifeOfTheParty"></div>
 	</div>
-	<div class="input-group">
-		<input type="text" class="form-control"  ng-model="dt" ng-required="true" is-open="isDatePickerOpen"  uib-datepicker-popup/>
-		<span class="input-group-btn">
-                <button type="button" class="btn btn-default" ng-click="toggleDatePicker()"><i class="glyphicon glyphicon-calendar"></i></button>
-              </span>
-	</div>
-	<!--<slider></slider>
-	<tagsinput></tagsinput>-->
-	<button type="submit" class="btn btn-primary"><i class="fa fa-lg fa-plus"></i> Add Applicant </button>
+	<button type="submit" class="btn btn-primary" ng-disabled="applicantForm.$invalid">Submit</button>
 </form>
 <form action="blah">
 
