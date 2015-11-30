@@ -1,6 +1,0 @@
-// .input-group
-input(type="text" placeholder="Search" ng-model="searchText.$").form-control
-div.list-group(ng-controller='ApplicantsCtrl')
-	a.list-group-item(ui-sref='applicantDetail({applicantId:\'{{applicant._id}}\'})' type='button' ng-repeat='applicant in applicants| filter:searchText'){{applicant.FirstName}} {{applicant.LastName}}
-	// .input-group-btn
-	// 	button.btn.btn-default.glyphicon.glyphicon-search(type="submit")

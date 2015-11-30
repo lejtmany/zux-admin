@@ -11,7 +11,6 @@
   <!-- bower:css -->
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
   <link rel="stylesheet" href="bower_components/videojs/dist/video-js/video-js.css" />
-  <link rel="stylesheet" href="bower_components/jquery-ui/themes/base/jquery-ui.min.css">
   <link rel="stylesheet" href="bower_components/flat-ui/dist/css/flat-ui.css" />
   <!-- endbower -->
   <!-- endbuild -->
@@ -47,14 +46,6 @@
   </div>
   <div class="container">
     <div ui-view=""></div>
-    <!--<input type="text" ng-model='someObject' placeholder="Type Something...">
-    <test-directive message='hi again!' my-model='someObject'></test-directive>-->
-    <div class="slider"></div>
-    <form action="blah">
-      <div class="tagsinput-primary">
-        <input class="tagsinput" type="tagsinput" value="blah" name="tagsinput" data-role="tagsinput">
-      </div>
-    </form>
   </div>
   <div class="footer">
   </div>
@@ -81,8 +72,10 @@
   <script src="bower_components/angular-touch/angular-touch.js"></script>
   <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
   <script src="bower_components/videojs/dist/video-js/video.js"></script>
-  <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
   <script src="bower_components/flat-ui/dist/js/flat-ui.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="bower_components/jquery-ui/jquery-ui.js"></script>
+  <script src="bower_components/angular-ui-slider/src/slider.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 
@@ -94,6 +87,8 @@
   <script src="scripts/controllers/applicantdetail.js"></script>
   <script src="scripts/directives/testdirective.js"></script>
   <script src="scripts/controllers/addapplicant.js"></script>
+  <script src="scripts/directives/slider.js"></script>
+  <script src="scripts/directives/tags-input.js"></script>
   <!-- endbuild -->
   <script>
     $(function(){
