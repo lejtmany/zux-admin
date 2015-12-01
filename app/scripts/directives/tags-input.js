@@ -20,23 +20,23 @@ angular.module('zuxAdminApp')
       },
       require: 'ngModel',
 
-      link: function postLink(scope, element, attrs, ctrl) {
-        element.find(".tagsinput").tagsinput();
-        if(scope.ngRequired === undefined)
-            scope.ngRequired = false;
-
-        // function lengthValidator(model){
-        //   if(model.length === 5){
-        //     ctrl.$setValidity('lengthValidator', true);
-        //   }
-        //   else{
-        //     ctrl.$setValidity('lengthValidator', false);            
-        //   }
-          
-        //   return model;
-        // }
+      link: function link(scope, element, attrs, ctrl) {
         
-        // ctrl.$parsers.push(lengthValidator);
+        element.find(".tagsinput").tagsinput({
+          maxTags: scope.ngMaxlength
+        });
+        
+        if (scope.ngRequired === undefined)
+          scope.ngRequired = false;
+
+       //if no tags set model to null so isn't marked invalid because not min length
+        element.find(".tagsinput").on('itemRemoved', function (event) {
+          scope.$apply(function () {
+            if (scope.ngModel.length === 0)
+              scope.ngModel = null;
+          })
+        });
+        
       }
     };
   });
