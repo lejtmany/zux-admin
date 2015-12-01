@@ -10,7 +10,7 @@
 	<div class="form-group">
 		<label for="DOB">Birthday</label>
 		<div class="input-group">
-			<input type="text" class="form-control" ng-model="birthday" ng-required="true" is-open="isDatePickerOpen" uib-datepicker-popup/>
+			<input type="text" class="form-control" ng-model="birthday" ng-required="true" ng-focus="setDatePickerOpen(true)" is-open="isDatePickerOpen" show-weeks="false" uib-datepicker-popup="MM/dd/yyyy"/>
 			<span class="input-group-btn">
                 <button type="button" class="btn btn-default" ng-click="toggleDatePicker()"><i class="glyphicon glyphicon-calendar"></i></button>
               </span>
@@ -22,7 +22,7 @@
 	</div>
 	<div class="form-group">
 		<label for="FavoriteThings">What are your 5 favorite things?</label>
-		<tags-input name="favoriteThings" ng-model="favoriteThings" ng-minlength=5 ng-maxlength=5 ng-required=false></tags-input>
+		<tags-input name="favoriteThings" ng-model="favoriteThings" ng-minlength=5 ng-maxlength=5 ng-required="false"" primary-theme="true"></tags-input>
 		<p>{{favoriteThings}} Length: {{favoriteThings.length}} isValid:{{applicantForm.favoriteThings.$valid}}</p>
 	</div>
 	<div class="form-group">
