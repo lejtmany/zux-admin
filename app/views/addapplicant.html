@@ -22,8 +22,8 @@
 	</div>
 	<div class="form-group">
 		<label for="FavoriteThings">What are your 5 favorite things?</label>
-		<tags-input ng-model="favoriteThings"></tags-input>
-		<p>{{favoriteThings}} Length: {{favoriteThings.length}} isValid:{{applicantForm.$valid}}</p>
+		<tags-input name="favoriteThings" ng-model="favoriteThings" ng-minlength=5 ng-maxlength=5 ng-required=false></tags-input>
+		<p>{{favoriteThings}} Length: {{favoriteThings.length}} isValid:{{applicantForm.favoriteThings.$valid}}</p>
 	</div>
 	<div class="form-group">
 		<label for="myslider">Are you the life of the party?</label>

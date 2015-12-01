@@ -34,7 +34,7 @@ module.exports = function(config) {
       'bower_components/videojs/dist/video-js/video.js',
       'bower_components/flat-ui/dist/js/flat-ui.js',
       'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
-      'bower_components/jquery-ui/ui/jquery-ui.js',
+      'bower_components/jquery-ui/jquery-ui.js',
       'bower_components/angular-ui-slider/src/slider.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower

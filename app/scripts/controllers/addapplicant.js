@@ -16,4 +16,8 @@ angular.module('zuxAdminApp')
     $scope.setDatePickerOpen = function (isOpen) {
       $scope.isDatePickerOpen = isOpen;
     };
+    
+    // $scope.checkFavoriteThings = function($event){
+    //   applicantForm.favoriteThings.$valid
+    // }
   }]);
