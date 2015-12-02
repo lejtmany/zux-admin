@@ -9,8 +9,8 @@
 angular.module('zuxAdminApp')
   .directive('tagsInput', function () {
     return {
-      template: '<div class="tagsinput-primary"><select class="tagsinput" type="tagsinput" value="Taking walks" name={{name}} ng-model="ngModel" ng-minlength={{ngMinlength}} ng-maxlength={{ngMaxlength}} ng-required={{ngRequired}} multiple></div>',
-      restrict: 'E',
+      template: '<div ng-class="{\'tagsinput-primary\':{{primaryTheme}}}"><select class="tagsinput" type="tagsinput" value="Taking walks" name={{name}} ng-model="ngModel" ng-minlength={{ngMinlength}} ng-maxlength={{ngMaxlength}} ng-required={{ngRequired}} multiple></div>',
+      restrict: 'AE',
       scope: {
         ngModel: '=',
         name: '@',
@@ -25,13 +25,8 @@ angular.module('zuxAdminApp')
 
         if (tAttrs.ngRequired === undefined)
           tAttrs.ngRequired = false;
-          
-        if (tAttrs.primaryTheme) {
-          var div = angular.element("<div class='tagsinput-primary'>hi</div>");
-          tElement.replaceWith(div);
-          // div.append(tElement);
-        }
 
+          
         return {
           pre: function preLink(scope, element, attrs, ctrl) {
 
